@@ -1,6 +1,12 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { environment } from '../environments/environment';
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
@@ -14,6 +20,8 @@ import {AddComponent} from './pages/add/add.component';
 import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {UiService} from './services/ui/ui.service';
+import {UserDataService} from './services/user/user-data.service';
+
 
 @NgModule({
   declarations: [
@@ -31,10 +39,13 @@ import {UiService} from './services/ui/ui.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.fireBase),
+    AngularFireDatabaseModule
   ],
   providers: [
     WeatherService,
-    UiService
+    UiService,
+    UserDataService
   ],
   bootstrap: [AppComponent]
 })

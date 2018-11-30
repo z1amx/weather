@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UiService} from './services/ui/ui.service';
+import {UserDataService} from './services/user/user-data.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,14 +11,15 @@ import {UiService} from './services/ui/ui.service';
 export class AppComponent implements OnInit {
   showMenu = false;
   darkModeActive: boolean;
-
-  constructor(public ui: UiService) {
-
-  }
-
+  usersData;
+  constructor(public ui: UiService, private usData: UserDataService ) {}
   ngOnInit() {
     this.ui.darkModeState.subscribe((value) => {
       this.darkModeActive = value;
+    });
+    this.usData.getUsers().subscribe((usersData) => {
+      this.usersData = usersData;
+      console.warn( this.usersData)
     });
   }
 
