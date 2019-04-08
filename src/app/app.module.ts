@@ -14,6 +14,9 @@ import {AddComponent} from './pages/add/add.component';
 import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {UiService} from './services/ui/ui.service';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,8 @@ import {UiService} from './services/ui/ui.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.fireBaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [
     WeatherService,
