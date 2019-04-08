@@ -4,14 +4,15 @@
 
 export const environment = {
   production: false,
-  fireBase: {
-    apiKey: 'AIzaSyANEv9eWlkeiIfk0YH9L8oTHiQEu8wtJb8',
-    authDomain: 'weather-site-f0417.firebaseapp.com',
-    databaseURL: 'https://weather-site-f0417.firebaseio.com',
-    projectId: 'weather-site-f0417',
-    storageBucket: 'weather-site-f0417.appspot.com',
-    messagingSenderId: '890104659397'
+  fireBaseConfig: {
+    apiKey: "AIzaSyCeX_Q71pso5DeyD2NrOM6zWeM3w-CIFfc",
+    authDomain: "weather-caf41.firebaseapp.com",
+    databaseURL: "https://weather-caf41.firebaseio.com",
+    projectId: "weather-caf41",
+    storageBucket: "weather-caf41.appspot.com",
+    messagingSenderId: "527490218177"
   }
+
 };
 
 /*

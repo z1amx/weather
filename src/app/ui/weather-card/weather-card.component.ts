@@ -47,7 +47,7 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
   }
 
   openDetails() {
-    this.router.navigateByUrl('/details/Lviv');
+    this.router.navigateByUrl('/details/lviv');
   }
 
 }
